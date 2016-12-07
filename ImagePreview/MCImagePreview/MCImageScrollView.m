@@ -104,6 +104,7 @@
     lRect.size.width = width;
     lRect.size.height = height;
     self.imageView.frame = lRect;
+    self.contentSize = lRect.size;
 }
 
 #pragma mark - Public 
