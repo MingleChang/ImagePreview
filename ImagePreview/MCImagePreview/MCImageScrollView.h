@@ -10,4 +10,6 @@
 
 @interface MCImageScrollView : UIScrollView
 
+- (void)setImage:(UIImage *)image;
+
 @end

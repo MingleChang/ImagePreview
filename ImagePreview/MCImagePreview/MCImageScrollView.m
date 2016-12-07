@@ -26,10 +26,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGRect lRect = self.imageView.frame;
-    lRect.size.height = self.frame.size.height;
-    self.imageView.frame = lRect;
-    NSLog(@"%@",self.imageView);
+    [self layoutImageViewFrame];
 }
 
 #pragma mark - Configure
@@ -46,7 +43,6 @@
     self.delegate = self;
     
     self.imageView=[[UIImageView alloc]init];
-    self.imageView.image=[UIImage imageNamed:@"1"];
     self.imageView.contentMode=UIViewContentModeScaleAspectFit;
     [self addSubview:self.imageView];
     [self configureImageViewConstraint];
@@ -63,7 +59,7 @@
 /**
  设置ImageView的约束，与ScrollView等宽等高
  */
--(void)configureImageViewConstraint{
+-(void)configureImageViewConstraint {
     self.imageView.translatesAutoresizingMaskIntoConstraints=NO;
     NSLayoutConstraint *lTopConstraint=[NSLayoutConstraint constraintWithItem:self.imageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0];
     NSLayoutConstraint *lBottomConstraint=[NSLayoutConstraint constraintWithItem:self.imageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
@@ -75,7 +71,7 @@
 }
 
 #pragma mark - Event Response
--(void)doubleTapGestureRecognizerEvent:(UITapGestureRecognizer *)sender{
+-(void)doubleTapGestureRecognizerEvent:(UITapGestureRecognizer *)sender {
     //双击手势出发后，放大或者缩小ScrollView
     if (self.zoomScale>1.5) {
         [self setZoomScale:1.0 animated:YES];
@@ -86,17 +82,33 @@
 
 #pragma mark - Delegate
 #pragma mark - ScrollView Delegate
--(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
 }
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView{
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
     
 }
-- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view{
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view {
     
 }
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale{
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale {
     
+}
+
+#pragma mark - Private
+- (void)layoutImageViewFrame {
+    CGFloat scale = self.zoomScale;
+    CGFloat width = self.frame.size.width * scale;
+    CGFloat height = MAX(self.imageView.image.size.height/self.imageView.image.size.width * width, self.frame.size.height);
+    CGRect lRect = self.imageView.frame;
+    lRect.size.width = width;
+    lRect.size.height = height;
+    self.imageView.frame = lRect;
+}
+
+#pragma mark - Public 
+- (void)setImage:(UIImage *)image {
+    self.imageView.image = image;
 }
 
 @end

@@ -29,18 +29,19 @@
 }
 
 #pragma mark - Configure
--(void)configure{
+- (void)configure {
     [self configureView];
     [self configureData];
 }
--(void)configureView{
+- (void)configureView {
     self.view.backgroundColor=[UIColor blackColor];
     //创建ScrollView
     self.scollView=[[MCImageScrollView alloc]init];
+    [self.scollView setImage:self.image];
     [self.view addSubview:self.scollView];
     [self configureScrollViewConstraint];
 }
--(void)configureData{
+- (void)configureData {
     
 }
 
@@ -48,7 +49,7 @@
 /**
  设置ScrollView的约束，填充满全屏
  */
--(void)configureScrollViewConstraint{
+-(void)configureScrollViewConstraint {
     self.scollView.translatesAutoresizingMaskIntoConstraints=NO;
     NSLayoutConstraint *lTopConstraint=[NSLayoutConstraint constraintWithItem:self.scollView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
     NSLayoutConstraint *lBottomConstraint=[NSLayoutConstraint constraintWithItem:self.scollView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
