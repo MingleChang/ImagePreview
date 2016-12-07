@@ -15,6 +15,7 @@
 		8285CD821DD4372400DAC5B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8285CD801DD4372400DAC5B7 /* LaunchScreen.storyboard */; };
 		8285CD8E1DD4375200DAC5B7 /* MCImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8285CD8B1DD4375200DAC5B7 /* MCImageViewController.m */; };
 		8285CD8F1DD4375200DAC5B7 /* MCMultipleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8285CD8D1DD4375200DAC5B7 /* MCMultipleImageViewController.m */; };
+		82C3DEB91DF856EC000DEDC6 /* MCImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C3DEB81DF856EC000DEDC6 /* MCImageScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		8285CD8C1DD4375200DAC5B7 /* MCMultipleImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMultipleImageViewController.h; sourceTree = "<group>"; };
 		8285CD8D1DD4375200DAC5B7 /* MCMultipleImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMultipleImageViewController.m; sourceTree = "<group>"; };
 		8285CD901DD4675100DAC5B7 /* MCImagePreview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCImagePreview.h; sourceTree = "<group>"; };
+		82C3DEB71DF856EC000DEDC6 /* MCImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCImageScrollView.h; sourceTree = "<group>"; };
+		82C3DEB81DF856EC000DEDC6 /* MCImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCImageScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				8285CD901DD4675100DAC5B7 /* MCImagePreview.h */,
+				82C3DEB71DF856EC000DEDC6 /* MCImageScrollView.h */,
+				82C3DEB81DF856EC000DEDC6 /* MCImageScrollView.m */,
 				8285CD8A1DD4375200DAC5B7 /* MCImageViewController.h */,
 				8285CD8B1DD4375200DAC5B7 /* MCImageViewController.m */,
 				8285CD8C1DD4375200DAC5B7 /* MCMultipleImageViewController.h */,
@@ -130,7 +135,7 @@
 				TargetAttributes = {
 					8285CD6E1DD4372300DAC5B7 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = CY9DXZ6JC3;
+						DevelopmentTeam = USZ9R7RQAA;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -176,6 +181,7 @@
 				8285CD7A1DD4372400DAC5B7 /* ViewController.m in Sources */,
 				8285CD771DD4372400DAC5B7 /* AppDelegate.m in Sources */,
 				8285CD741DD4372400DAC5B7 /* main.m in Sources */,
+				82C3DEB91DF856EC000DEDC6 /* MCImageScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CY9DXZ6JC3;
+				DEVELOPMENT_TEAM = USZ9R7RQAA;
 				INFOPLIST_FILE = ImagePreview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mingle.ImagePreview;
@@ -305,7 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CY9DXZ6JC3;
+				DEVELOPMENT_TEAM = USZ9R7RQAA;
 				INFOPLIST_FILE = ImagePreview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mingle.ImagePreview;
@@ -332,6 +338,7 @@
 				8285CD881DD4372400DAC5B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

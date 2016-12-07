@@ -11,5 +11,6 @@
 
 #import "MCImageViewController.h"
 #import "MCMultipleImageViewController.h"
+#import "MCImageScrollView.h"
 
 #endif /* MCImagePreview_h */
